@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Timetable</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #000;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .search {
+            padding: 10px;
+            width: 250px;
+            border: 2px solid #252525;
+            border-radius: 5px;
+        }
+
+        .highlight-label {
+            background: #d8b423;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #free {
+            display: none;
+        }
+
+        table {
+            width: 100%;
+            text-align: center;
+        }
+
+        th {
+            background: #0f263b;
+            color: white;
+            padding: 15px;
+        }
+
+        td {
+            border: 1px solid #ccc;
+            padding: 15px;
+        }
+
+        .time {
+            background: #eeeeee;
+            font-weight: bold;
+        }
+
+        .free {
+            background: #f8f8f8;
+            color: #777;
+            font-weight: bold;
+        }
+
+        /* Highlight free periods when checkbox is selected */
+        #free:checked ~ .timetable table .free {
+            background: #af9118;
+            color: #1e3a5f;
+            border: 2px solid #816307;
+        }
+
+        .subject {
+            font-weight: bold;
+        }
+
+        .teacher {
+            font-size: 12px;
+            color: #666;
+        }
+
+        @media (max-width: 700px) {
+            table {
+                font-size: 12px;
+            }
+
+            td, th {
+                padding: 8px;
+            }
+
+            .search {
+                width: 100%;
+            }
+        }
+        img
+        {
+            margin-right: 15px;
+            border : none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    
+    <h1><img src="https://www.svgrepo.com/show/415294/calendar-month-schedule-time-date.svg" alt="Calendar Icon" width="50" height="50">College Timetable</h1>
+
+    <div class="top">
+
+        <input type="search" class="search" placeholder="Search using Ctrl + F">
+
+        <label for="free" class="highlight-label">Highlight Free Periods</label>
+
+    </div>
+
+    <input type="checkbox" id="free">
+    <div class="timetable">
+        <table>
+            <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </tr>
+
+            <tr>
+                <td class="time">9:00 - 10:00</td>
+
+                <td>
+                    <div class="subject">Mathematics</div>
+                    <div class="teacher">Mr. Kumar</div>
+                </td>
+
+                <td>
+                    <div class="subject">Digital Electronics</div>
+                    <div class="teacher">Mrs. Sharma</div>
+                </td>
+
+                <td class="free">FREE</td>
+
+                <td>
+                    <div class="subject">Java</div>
+                    <div class="teacher">Mr. Singh</div>
+                </td>
+
+                <td>
+                    <div class="subject">Operating System</div>
+                    <div class="teacher">Mr. Verma</div>
+                </td>
+                
+                <td>
+                    <div class="subject">Mathematics</div>
+                    <div class="teacher">Mr. Kumar</div>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td class="time">10:00 - 11:00</td>
+
+                <td>
+                    <div class="subject">Java</div>
+                    <div class="teacher">Mr. Singh</div>
+                </td>
+
+                <td class="free">FREE</td>
+
+                <td>
+                    <div class="subject">Mathematics</div>
+                    <div class="teacher">Mr. Kumar</div>
+                </td>
+
+                <td>
+                    <div class="subject">Digital Electronics</div>
+                    <div class="teacher">Mrs. Sharma</div>
+                </td>
+
+                <td class="free">FREE</td>
+                
+                 <td>
+                    <div class="subject">Operating System</div>
+                    <div class="teacher">Mr. Verma</div>
+                </td>
+
+            </tr>
+              
+            <tr>
+                <td class="time">11:00 - 12:00</td>
+
+                <td>
+                    <div class="subject">Operating System</div>
+                    <div class="teacher">Mr. Verma</div>
+                </td>
+
+                <td>
+                    <div class="subject">Mathematics</div>
+                    <div class="teacher">Mr. Kumar</div>
+                </td>
+
+                <td>
+                    <div class="subject">Java</div>
+                    <div class="teacher">Mr. Singh</div>
+                </td>
+
+                <td class="free">FREE</td>
+
+                <td>
+                    <div class="subject">Digital Electronics</div>
+                    <div class="teacher">Mrs. Sharma</div>
+                </td>
+
+                 <td class="free">FREE</td>
+
+            </tr>
+
+            <tr>
+                <td class="time">12:00 - 1:00</td>
+
+                <td class="free">FREE</td>
+
+                <td>
+                    <div class="subject">Operating System</div>
+                    <div class="teacher">Mr. Verma</div>
+                </td>
+
+                <td>
+                    <div class="subject">Digital Electronics</div>
+                    <div class="teacher">Mrs. Sharma</div>
+                </td>
+
+                <td>
+                    <div class="subject">Mathematics</div>
+                    <div class="teacher">Mr. Kumar</div>
+                </td>
+                
+                 <td class="free">FREE</td>
+
+                <td>
+                    <div class="subject">Java</div>
+                    <div class="teacher">Mr. Singh</div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="time">2:00 - 3:00</td>
+
+                <td>
+                    <div class="subject">Digital Electronics</div>
+                    <div class="teacher">Mrs. Sharma</div>
+                </td>
+
+                <td>
+                    <div class="subject">Java</div>
+                    <div class="teacher">Mr. Singh</div>
+                </td>
+
+                <td class="free">FREE</td>
+
+                <td>
+                    <div class="subject">Operating System</div>
+                    <div class="teacher">Mr. Verma</div>
+                </td>
+
+                <td>
+                    <div class="subject">Mathematics</div>
+                    <div class="teacher">Mr. Kumar</div>
+                </td>
+
+                <td>
+                    <div class="subject">Digital Electronics</div>
+                    <div class="teacher">Mrs. Sharma</div>
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+</body>
+</html>
