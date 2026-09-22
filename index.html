@@ -55,9 +55,16 @@
             display: none;
         }
 
+        /* Responsive table */
+        .timetable {
+            width: 100%;
+            overflow-x: auto;
+        }
+
         table {
             width: 100%;
             text-align: center;
+            border-collapse: collapse;
         }
 
         th {
@@ -82,7 +89,7 @@
             font-weight: bold;
         }
 
-        /* Highlight free periods when checkbox is selected */
+        /* Highlight free periods */
         #free:checked ~ .timetable table .free {
             background: #af9118;
             color: #1e3a5f;
@@ -98,27 +105,55 @@
             color: #666;
         }
 
+        img {
+            margin-right: 15px;
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 700px) {
+
+            body {
+                padding: 10px;
+            }
+
             .container {
                 width: 100%;
                 padding: 10px;
-            }
-            table {
-                font-size: 12px;
+                overflow: hidden;
             }
 
-            td, th {
-                padding: 8px;
+            h1 {
+                font-size: 24px;
+            }
+
+            .top {
+                flex-direction: column;
+                gap: 10px;
             }
 
             .search {
                 width: 100%;
             }
-        }
-        img
-        {
-            margin-right: 15px;
-            border : none;
+
+            .highlight-label {
+                width: 100%;
+                text-align: center;
+            }
+
+            .timetable {
+                width: 100%;
+                overflow-x: auto;
+            }
+
+            table {
+                min-width: 750px;
+                font-size: 12px;
+            }
+
+            td,
+            th {
+                padding: 8px;
+            }
         }
     </style>
 </head>
@@ -126,20 +161,33 @@
 <body>
 
 <div class="container">
-    
-    <h1><img src="https://www.svgrepo.com/show/415294/calendar-month-schedule-time-date.svg" alt="Calendar Icon" width="50" height="50">College Timetable</h1>
+
+    <h1>
+        <img src="https://www.svgrepo.com/show/415294/calendar-month-schedule-time-date.svg"
+             alt="Calendar Icon"
+             width="50"
+             height="50">
+        College Timetable
+    </h1>
 
     <div class="top">
 
-        <input type="search" class="search" placeholder="Search using Ctrl + F">
+        <input type="search"
+               class="search"
+               placeholder="Search using Ctrl + F">
 
-        <label for="free" class="highlight-label">Highlight Free Periods</label>
+        <label for="free" class="highlight-label">
+            Highlight Free Periods
+        </label>
 
     </div>
 
     <input type="checkbox" id="free">
+
     <div class="timetable">
+
         <table>
+
             <tr>
                 <th>Time</th>
                 <th>Monday</th>
@@ -174,12 +222,11 @@
                     <div class="subject">Operating System</div>
                     <div class="teacher">Mr. Verma</div>
                 </td>
-                
+
                 <td>
                     <div class="subject">Mathematics</div>
                     <div class="teacher">Mr. Kumar</div>
                 </td>
-
             </tr>
 
             <tr>
@@ -203,14 +250,13 @@
                 </td>
 
                 <td class="free">FREE</td>
-                
-                 <td>
+
+                <td>
                     <div class="subject">Operating System</div>
                     <div class="teacher">Mr. Verma</div>
                 </td>
-
             </tr>
-              
+
             <tr>
                 <td class="time">11:00 - 12:00</td>
 
@@ -236,8 +282,7 @@
                     <div class="teacher">Mrs. Sharma</div>
                 </td>
 
-                 <td class="free">FREE</td>
-
+                <td class="free">FREE</td>
             </tr>
 
             <tr>
@@ -259,8 +304,8 @@
                     <div class="subject">Mathematics</div>
                     <div class="teacher">Mr. Kumar</div>
                 </td>
-                
-                 <td class="free">FREE</td>
+
+                <td class="free">FREE</td>
 
                 <td>
                     <div class="subject">Java</div>
@@ -297,12 +342,12 @@
                     <div class="subject">Digital Electronics</div>
                     <div class="teacher">Mrs. Sharma</div>
                 </td>
-
             </tr>
 
         </table>
 
     </div>
 </div>
+
 </body>
 </html>
